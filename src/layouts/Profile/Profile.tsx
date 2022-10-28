@@ -1,4 +1,4 @@
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams, Navigate } from 'react-router-dom';
 import { useGlobalContext } from '../../globalContext';
 import { ProfilePic, ProfileWrapper, ProfileNavBar, ProfileHeader, ProfileName, ProfileDetails, ProfileAddress } from './Profile.styles';
 import { AiOutlineHome, AiOutlineMail, AiOutlinePhone } from 'react-icons/ai';
@@ -8,7 +8,7 @@ const Profile = () => {
 	const { users } = useGlobalContext();
 	const user = users.filter(user => user.login.uuid === userSlug)[0] || null;
 
-	if (!user) return <div>Error! Sorry!</div>;
+	if (!user) return <Navigate to="/" />;
 
 	return (
 		<>

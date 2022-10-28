@@ -4,8 +4,8 @@ import HomePage from './layouts/HomePage/HomePage';
 import Profile from './layouts/Profile/Profile';
 import { GlobalContext } from './globalContext';
 import { User } from './models/User';
-import { Logo, NavBar, Root } from './App.styles';
-import { Quote } from './models/Quotes';
+import { SideChatUsers, Logo, NavBar, Root, SideChat, UserStatus, UserThumbnail, InnerThumbnail } from './App.styles';
+import { SocialWallTile } from './components/UserTile/UserTile.styles';
 
 function App() {
 	const [users, updateUsers] = useState<User[]>([]);
@@ -18,6 +18,23 @@ function App() {
 						<span>Fake</span>Book
 					</Logo>
 				</NavBar>
+				<SideChat>
+					<SocialWallTile>
+						<SideChatUsers>
+							{users &&
+								users.map(user => (
+									<UserThumbnail>
+										<InnerThumbnail to={`/${user.login.uuid}`}>
+											<UserStatus active={Math.random() < 0.5} />
+											<img src={user.picture.thumbnail} alt="" />
+
+											{user.name.first}
+										</InnerThumbnail>
+									</UserThumbnail>
+								))}
+						</SideChatUsers>
+					</SocialWallTile>
+				</SideChat>
 				<Routes>
 					<Route path="/" element={<HomePage />} />
 					<Route path="/:userSlug" element={<Profile />} />
