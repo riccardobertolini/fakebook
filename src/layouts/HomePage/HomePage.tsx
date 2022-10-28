@@ -1,25 +1,33 @@
 import React, { useEffect, useState } from 'react';
-import { APIUserResult, User } from '../../models/User';
+import { User } from '../../models/User';
 import { getUsers } from '../../api/getUsers';
 import { Body, SocialWall } from '../../App.styles';
 import { UserTile } from '../../components/UserTile/UserTile';
+import { useGlobalContext } from '../../globalContext';
 
 const HomePage = () => {
 	const [loading, setLoading] = useState<boolean>(false);
 	const [error, setError] = useState<boolean>(false);
 	const [page, setPage] = useState<number>(1);
 	const [userList, updateUserList] = useState<User[]>([]);
+	const { users, updateUsers } = useGlobalContext();
 
 	useEffect(() => {
 		const fetchUsers = async () => {
-			setLoading(true);
-			const fetchedUsers: string | APIUserResult = await getUsers();
-			if (typeof fetchedUsers !== 'string') {
-				updateUserList([...userList, ...fetchedUsers.results]);
+			if (page === 1 && users.length !== 0) {
+				updateUserList(users);
 			} else {
-				setError(true);
+				setLoading(true);
+				const fetchedUsers = await getUsers();
+				if (typeof fetchedUsers !== 'string') {
+					const updatedList = [...userList, ...fetchedUsers.results];
+					updateUserList(updatedList);
+					updateUsers(updatedList);
+				} else {
+					setError(true);
+				}
+				setLoading(false);
 			}
-			setLoading(false);
 		};
 
 		fetchUsers();
