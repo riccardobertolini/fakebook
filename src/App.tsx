@@ -1,26 +1,47 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useEffect, useState } from 'react';
 import './App.css';
+import { APIUserResult, User } from './models/User';
+import { getUsers } from './api/getUsers';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const [loading, setLoading] = useState<boolean>(false);
+	const [error, setError] = useState<boolean>(false);
+	const [page, setPage] = useState<number>(1);
+	const [userList, updateUserList] = useState<User[]>([]);
+
+	useEffect(() => {
+		const fetchUsers = async () => {
+			setLoading(true);
+			const fetchedUsers: string | APIUserResult = await getUsers();
+			if (typeof fetchedUsers !== 'string') {
+				updateUserList([...userList, ...fetchedUsers.results]);
+			} else {
+				setError(true);
+			}
+			setLoading(false);
+		};
+
+		fetchUsers();
+	}, [page]);
+
+	if (loading) return <div>loading...</div>;
+
+	if (error) return <div>error, sorry!</div>;
+
+	return (
+		<div className="App">
+			Users:
+			{userList?.map(item => (
+				<div>
+					{item.name.first} {item.name.last}
+				</div>
+			))}
+			<hr />
+			Current page: {page}
+			<br />
+			<div onClick={() => setPage(page + 1)}>Show More</div>
+		</div>
+	);
 }
 
 export default App;
