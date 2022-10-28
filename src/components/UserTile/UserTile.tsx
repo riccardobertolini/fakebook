@@ -4,6 +4,7 @@ import { QuoteProps } from '../../models/Quotes';
 import { SocialWallTile, UserInfo, ImagePosted, Quote, ImageContainer, SocialInteractions, LikeButton, CommentButton } from './UserTile.styles';
 import { getQuotes } from '../../api/getQuote';
 import { AiOutlineLike, AiFillLike } from 'react-icons/ai';
+import { Link } from 'react-router-dom';
 
 type UserProps = {
 	user: User;
@@ -37,14 +38,14 @@ export function UserTile({ user, index }: UserProps) {
 			</UserInfo>
 			<Quote>{quote && quote[index].text}</Quote>
 			<ImageContainer>
-				<ImagePosted src={`https://picsum.photos/400/400?random=${index}`} />
+				<ImagePosted src={`https://picsum.photos/400/450?random=${index}`} />
 			</ImageContainer>
 			<SocialInteractions>
 				<LikeButton onClick={() => userLikedPost()}>
 					{liked ? <AiFillLike /> : <AiOutlineLike />}
 					{likesNumber} Like(s)
 				</LikeButton>
-				<CommentButton>Open Profile</CommentButton>
+				<CommentButton to={`/${user.login.uuid}`}>Open Profile</CommentButton>
 			</SocialInteractions>
 		</SocialWallTile>
 	);

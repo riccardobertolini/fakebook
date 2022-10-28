@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const commonMargin = css`
 	padding-bottom: 15px;
@@ -26,6 +27,7 @@ export const UserInfo = styled.div`
 		border-radius: 50%;
 		width: 40px;
 		height: 40px;
+		object-fit: contain;
 	}
 `;
 
@@ -38,6 +40,7 @@ export const ImageContainer = styled.div`
 export const ImagePosted = styled.img`
 	width: 100%;
 	transition: 0.3s;
+	object-fit: contain;
 
 	&:hover {
 		transform: scale(1.1);
@@ -69,9 +72,15 @@ const InteractionButtonsDesign = css`
 `;
 
 export const LikeButton = styled.button`
-	${InteractionButtonsDesign}
+	${InteractionButtonsDesign};
+	cursor: pointer;
 `;
 
-export const CommentButton = styled.button`
-	${InteractionButtonsDesign}
+export const CommentButton = styled(Link)`
+	${InteractionButtonsDesign};
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: black;
+	text-decoration: none;
 `;
