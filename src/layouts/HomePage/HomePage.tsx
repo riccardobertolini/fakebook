@@ -4,6 +4,7 @@ import { getUsers } from '../../api/getUsers';
 import { Body, SocialWall } from '../../App.styles';
 import { UserTile } from '../../components/UserTile/UserTile';
 import { useGlobalContext } from '../../globalContext';
+import { UserTileLoading } from '../../components/UserTile/UserTileLoading';
 
 const HomePage = () => {
 	const [loading, setLoading] = useState<boolean>(false);
@@ -33,17 +34,15 @@ const HomePage = () => {
 		fetchUsers();
 	}, [page]);
 
-	if (loading && userList.length === 0) return <div>loading...</div>;
-
 	if (error) return <div>error, sorry!</div>;
 
 	return (
 		<Body>
 			<SocialWall>
+				{loading && <UserTileLoading times={5} />}
 				{userList?.map((user, index) => (
 					<UserTile user={user} index={index} />
 				))}
-				{loading && userList.length !== 0 && <div>loading...</div>}
 				<div onClick={() => setPage(page + 1)}>Show More</div>
 			</SocialWall>
 		</Body>

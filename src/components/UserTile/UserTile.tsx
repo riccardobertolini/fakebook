@@ -4,7 +4,6 @@ import { QuoteProps } from '../../models/Quotes';
 import { SocialWallTile, UserInfo, ImagePosted, Quote, ImageContainer, SocialInteractions, LikeButton, CommentButton } from './UserTile.styles';
 import { getQuotes } from '../../api/getQuote';
 import { AiOutlineLike, AiFillLike } from 'react-icons/ai';
-import { Link } from 'react-router-dom';
 
 type UserProps = {
 	user: User;
