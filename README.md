@@ -1,6 +1,8 @@
 # FakeBook
 
-Simple project made with React 18, useEffect and TypeScript.
+Simple project made with React 18, useEffect, Context Hook and TypeScript.
+A live demo for a quick preview, is available [👉 clicking here](https://fakebook-ten.vercel.app/).
+
 
 ## How to
 
@@ -18,5 +20,9 @@ Launches the test runner.\
 ### `npm run build`
 
 Builds the app for production to the `build` folder.\
+
+### Notes
+The Open API that generates Users does not save/cache any of the provided results. 
+So, it's virtually impossible retrieve data once refreshed the page.
 
 Author: Riccardo Bertolini
