@@ -42,52 +42,13 @@ export const EmptyProfileImage = styled.div`
 	background-color: dimgrey;
 	object-fit: contain;
 `;
-
-export const ImageContainer = styled.div`
-	position: relative;
-	overflow: hidden;
-	background-color: dimgrey;
-	height: 400px;
-`;
-
 export const QuoteLoading = styled.div`
 	font-weight: 400;
 	font-size: 18px;
 	width: 100%;
-	height: 20px;
+	height: 40px;
 	margin-bottom: 20px;
 	background-color: #ccc;
 	font-family: 'Lato', sans-serif;
 	${commonMargin};
-`;
-
-export const SocialInteractions = styled.div`
-	display: flex;
-	position: relative;
-	gap: 2px;
-`;
-
-const InteractionButtonsDesign = css`
-	width: 50%;
-	height: 40px;
-	font-size: 16px;
-	font-family: 'Lato', sans-serif;
-	font-weight: 700;
-	background-color: #f3f3f3;
-	border: 1px solid #eee;
-	border-radius: 5px;
-`;
-
-export const LikeButton = styled.button`
-	${InteractionButtonsDesign};
-	cursor: pointer;
-`;
-
-export const CommentButton = styled(Link)`
-	${InteractionButtonsDesign};
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	color: black;
-	text-decoration: none;
 `;

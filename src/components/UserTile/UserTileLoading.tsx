@@ -1,5 +1,5 @@
-import { ImageContainer, UserInfo, LikeButton, QuoteLoading, SocialInteractions, SocialWallTile, EmptyProfileImage } from './UserTileLoading.styles';
-
+import { UserInfo, QuoteLoading, SocialWallTile, EmptyProfileImage } from './UserTileLoading.styles';
+import { ImageContainer, SocialInteractions, LikeButton } from './UserTile.styles';
 type LoadingProps = {
 	times: number;
 };

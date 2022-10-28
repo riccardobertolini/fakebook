@@ -17,10 +17,13 @@ export function UserTile({ user, index }: UserProps) {
 
 	useEffect(() => {
 		const fetchQuote = async () => {
-			const getQuoteOnline = await getQuotes();
-			updateQuote(getQuoteOnline);
+			await getQuotes().then(result => {
+				updateQuote(result);
+			});
 		};
+
 		fetchQuote();
+
 		updateLikes(Math.floor(Math.random() * 100));
 	}, []);
 
@@ -35,7 +38,7 @@ export function UserTile({ user, index }: UserProps) {
 				<img src={user.picture.medium} alt="" />
 				{user.name.first} {user.name.last}
 			</UserInfo>
-			<Quote>{quote && quote[index].text}</Quote>
+			<Quote>{(quote && quote[index]?.text) || ''}</Quote>
 			<ImageContainer>
 				<ImagePosted src={`https://picsum.photos/400/450?random=${index}`} />
 			</ImageContainer>

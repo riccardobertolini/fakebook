@@ -1,14 +1,19 @@
 import styled from 'styled-components';
 
+export const Root = styled.div`
+	background-color: #eee;
+	min-height: 100vh;
+`;
+
 export const Body = styled.div`
 	background-color: #eee;
-	padding: 20px;
 `;
 
 export const SocialWall = styled.div`
 	width: 100%;
-	max-width: 400px;
+	max-width: 500px;
 	margin: auto;
+	padding: 40px;
 `;
 
 export const NavBar = styled.div`
@@ -17,6 +22,8 @@ export const NavBar = styled.div`
 	align-items: center;
 	position: sticky;
 	height: 80px;
+	background-color: #fff;
+	box-shadow: 2px 2px 10px #eee;
 `;
 
 export const Logo = styled.div`

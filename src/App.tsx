@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
-import { Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import HomePage from './layouts/HomePage/HomePage';
 import Profile from './layouts/Profile/Profile';
 import { GlobalContext } from './globalContext';
 import { User } from './models/User';
-import { Logo, NavBar } from './App.styles';
+import { Logo, NavBar, Root } from './App.styles';
+import { Quote } from './models/Quotes';
 
 function App() {
 	const [users, updateUsers] = useState<User[]>([]);
+
 	return (
-		<>
+		<Root>
 			<GlobalContext.Provider value={{ users, updateUsers }}>
 				<NavBar>
 					<Logo>
@@ -21,7 +23,7 @@ function App() {
 					<Route path="/:userSlug" element={<Profile />} />
 				</Routes>
 			</GlobalContext.Provider>
-		</>
+		</Root>
 	);
 }
 
