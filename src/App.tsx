@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import './App.css';
 import { APIUserResult, User } from './models/User';
 import { getUsers } from './api/getUsers';
+import { UserTile } from './components/UserTile/UserTile';
+import { SocialWall, Body } from './App.styles';
 
 function App() {
 	const [loading, setLoading] = useState<boolean>(false);
@@ -24,23 +25,20 @@ function App() {
 		fetchUsers();
 	}, [page]);
 
-	if (loading) return <div>loading...</div>;
+	if (loading && userList.length === 0) return <div>loading...</div>;
 
 	if (error) return <div>error, sorry!</div>;
 
 	return (
-		<div className="App">
-			Users:
-			{userList?.map(item => (
-				<div>
-					{item.name.first} {item.name.last}
-				</div>
-			))}
-			<hr />
-			Current page: {page}
-			<br />
-			<div onClick={() => setPage(page + 1)}>Show More</div>
-		</div>
+		<Body>
+			<SocialWall>
+				{userList?.map((user, index) => (
+					<UserTile user={user} index={index} />
+				))}
+				{loading && userList.length !== 0 && <div>loading...</div>}
+				<div onClick={() => setPage(page + 1)}>Show More</div>
+			</SocialWall>
+		</Body>
 	);
 }
 
