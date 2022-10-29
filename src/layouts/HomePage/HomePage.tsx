@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { User } from '../../models/User';
 import { getUsers } from '../../api/getUsers';
 import { Body, SocialWall, ShowMoreBtn, Footer } from '../../App.styles';
@@ -13,7 +13,7 @@ const HomePage = () => {
 	const [userList, updateUserList] = useState<User[]>([]);
 	const { users, updateUsers } = useGlobalContext();
 
-	useEffect(() => {
+	React.useEffect(() => {
 		const fetchUsers = async () => {
 			if (page === 1 && users.length !== 0) {
 				updateUserList(users);

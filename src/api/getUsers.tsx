@@ -1,5 +1,5 @@
+import { APIUserResult } from '../models/User';
 import axios from 'axios';
-import { APIUserResult, User } from '../models/User';
 
 export const getUsers = async () => {
 	try {
@@ -9,11 +9,7 @@ export const getUsers = async () => {
 			},
 		});
 		return data;
-	} catch (error) {
-		if (axios.isAxiosError(error)) {
-			return error.message;
-		} else {
-			return 'An unexpected error occurred';
-		}
+	} catch {
+		return 'An unexpected error occurred';
 	}
 };

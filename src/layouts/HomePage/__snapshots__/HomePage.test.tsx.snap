@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HomePage component should renders 1`] = `
+<div
+  className="sc-gswNZR kDQAfP"
+>
+  <div
+    className="sc-dkrFOg eKOlkR"
+  >
+    <div
+      className="sc-kDvujY fwoiUJ"
+    >
+      <button
+        className="sc-jrcTuL drZSHS"
+        onClick={[Function]}
+      >
+        Show More
+      </button>
+    </div>
+  </div>
+</div>
+`;

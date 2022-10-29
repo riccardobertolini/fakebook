@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App component should renders 1`] = `
+<div
+  className="sc-bcXHqe hICBOO"
+>
+  <div
+    className="sc-hLBbgP dpBJer"
+  />
+  <div
+    className="sc-jSUZER rxTen"
+  >
+    <div
+      className="sc-ipEyDJ grhRCC"
+    >
+      <ul
+        className="sc-iBYQkv igfonv"
+      >
+        <li
+          className="sc-ftTHYK hJbqbM"
+        />
+      </ul>
+    </div>
+  </div>
+</div>
+`;
