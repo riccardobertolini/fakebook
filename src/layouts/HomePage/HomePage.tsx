@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { User } from '../../models/User';
 import { getUsers } from '../../api/getUsers';
-import { Body, SocialWall } from '../../App.styles';
+import { Body, SocialWall, ShowMoreBtn, Footer } from '../../App.styles';
 import { UserTile } from '../../components/UserTile/UserTile';
 import { useGlobalContext } from '../../globalContext';
 import { UserTileLoading } from '../../components/UserTile/UserTileLoading';
@@ -43,7 +43,9 @@ const HomePage = () => {
 				{userList?.map((user, index) => (
 					<UserTile user={user} index={index} />
 				))}
-				<div onClick={() => setPage(page + 1)}>Show More</div>
+				<Footer>
+					<ShowMoreBtn onClick={() => setPage(page + 1)}>Show More</ShowMoreBtn>
+				</Footer>
 			</SocialWall>
 		</Body>
 	);

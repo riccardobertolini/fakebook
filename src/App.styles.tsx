@@ -31,8 +31,9 @@ export const NavBar = styled.div`
 	box-shadow: 2px 2px 10px #eee;
 `;
 
-export const Logo = styled.div`
+export const Logo = styled(Link)`
 	font-size: 45px;
+	text-decoration: none;
 	font-family: 'Lato', sans-serif;
 	font-weight: 200;
 	color: cornflowerblue;
@@ -94,4 +95,21 @@ export const InnerThumbnail = styled(Link)`
 	align-items: center;
 	justify-content: left;
 	gap: 10px;
+`;
+
+export const ShowMoreBtn = styled.button`
+	text-decoration: none;
+	color: #000;
+	background-color: #fff;
+	display: block;
+	padding: 5px 20px;
+	border-radius: 25px;
+	border: 1px solid #000;
+	cursor: pointer;
+`;
+
+export const Footer = styled.div`
+	display: flex;
+	justify-content: center;
+	padding: 10px;
 `;

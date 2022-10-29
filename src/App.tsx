@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Link } from 'react-router-dom';
 import HomePage from './layouts/HomePage/HomePage';
 import Profile from './layouts/Profile/Profile';
 import { GlobalContext } from './globalContext';
@@ -14,7 +14,7 @@ function App() {
 		<Root>
 			<GlobalContext.Provider value={{ users, updateUsers }}>
 				<NavBar>
-					<Logo>
+					<Logo to={'/'}>
 						<span>Fake</span>Book
 					</Logo>
 				</NavBar>
