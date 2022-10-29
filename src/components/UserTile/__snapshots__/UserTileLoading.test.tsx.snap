@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UserTileLoading component should renders 1`] = `
+<div
+  className="sc-bcXHqe kgBFga"
+>
+  <div
+    className="sc-gswNZR hTTcLS"
+  >
+    <div
+      className="sc-hLBbgP jlFNFl"
+    />
+    <span />
+     
+    <span />
+    <span />
+  </div>
+  <div
+    className="sc-eDvSVe EJluP"
+  />
+  <div
+    className="sc-dkrFOg cvLPLY"
+  />
+  <div
+    className="sc-jrcTuL hFXkiT"
+  >
+    <a
+      className="sc-kDvujY bkYPUV"
+    />
+    <a
+      className="sc-kDvujY bkYPUV"
+    />
+  </div>
+</div>
+`;
