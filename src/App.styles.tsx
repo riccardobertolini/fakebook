@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 export const Root = styled.div`
@@ -12,6 +12,7 @@ export const Body = styled.div`
 
 export const SocialWall = styled.div`
 	max-width: 500px;
+	min-width: 450px;
 	margin: auto;
 	padding: 20px 5px;
 
@@ -44,18 +45,17 @@ export const Logo = styled(Link)`
 `;
 
 export const SideChat = styled.div`
-	float: left;
 	display: none;
-	margin: 20px;
-	width: 200px;
-	position: absolute;
+	width: 300px;
+	margin: 0 0 0 auto;
 
 	@media screen and (min-width: 1024px) {
 		display: block;
-		margin: 40px 0 0 5%;
+		margin: 40px 0 0 auto;
 	}
+
 	@media screen and (min-width: 1400px) {
-		margin: 40px 0 0 15%;
+		margin: 40px 0 0 auto;
 	}
 `;
 
@@ -109,6 +109,12 @@ export const ShowMoreBtn = styled.button`
 `;
 
 export const Footer = styled.div`
+	display: flex;
+	justify-content: center;
+	padding: 10px;
+`;
+
+export const BodyComponent = styled.div`
 	display: flex;
 	justify-content: center;
 	padding: 10px;

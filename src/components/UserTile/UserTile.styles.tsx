@@ -35,6 +35,7 @@ export const ImageContainer = styled.div`
 	position: relative;
 	overflow: hidden;
 	height: 400px;
+	width: 100%;
 `;
 
 export const ImagePosted = styled.img`

@@ -12,9 +12,6 @@ const Profile = () => {
 
 	return (
 		<>
-			<ProfileNavBar>
-				<Link to={'/'}>Back to Home</Link>
-			</ProfileNavBar>
 			<ProfileWrapper>
 				<ProfileHeader>
 					<ProfilePic src={user.picture.large} alt="" />
@@ -34,6 +31,10 @@ const Profile = () => {
 						<AiOutlinePhone /> {user.phone}
 					</ProfileDetails>
 				</ProfileHeader>
+				<br />
+				<ProfileNavBar>
+					<Link to={'/'}>Back to Home</Link>
+				</ProfileNavBar>
 			</ProfileWrapper>
 		</>
 	);

@@ -1,5 +1,4 @@
 import styled, { css } from 'styled-components';
-import { Link } from 'react-router-dom';
 
 const commonMargin = css`
 	padding-bottom: 15px;
@@ -11,6 +10,12 @@ export const SocialWallTile = styled.div`
 	border-radius: 10px;
 	padding: 20px 10px;
 	margin-bottom: 20px;
+	min-width: 500px;
+	position: absolute;
+	z-index: 1;
+	top: 130px;
+	left: 50%;
+	transform: translate(-50%, 0);
 `;
 
 export const UserInfo = styled.div`
@@ -34,6 +39,15 @@ export const UserInfo = styled.div`
 	}
   }
 }`;
+
+export const ImageContainerLoading = styled.div`
+	position: relative;
+	overflow: hidden;
+	min-height: 450px;
+	min-width: 450px;
+	background-color: grey;
+	width: 100%;
+`;
 
 export const EmptyProfileImage = styled.div`
 	border-radius: 50%;

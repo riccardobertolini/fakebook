@@ -45,7 +45,7 @@ export const MockedUser1 = {
 	cell: '(132)-372-7000',
 	id: {
 		name: '',
-		value: null,
+		value: '',
 	},
 	picture: {
 		large: 'https://randomuser.me/api/portraits/women/44.jpg',

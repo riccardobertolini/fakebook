@@ -8,19 +8,30 @@ exports[`App component should renders 1`] = `
     className="sc-hLBbgP dpBJer"
   />
   <div
-    className="sc-jSUZER rxTen"
+    className="sc-ipEyDJ gHALup"
   >
     <div
-      className="sc-ipEyDJ grhRCC"
+      className="sc-jSUZER kjWGah"
     >
-      <ul
-        className="sc-iBYQkv igfonv"
+      <div
+        className="sc-csuSiG fLyrYx"
       >
-        <li
-          className="sc-ftTHYK hJbqbM"
-        />
-      </ul>
+        <ul
+          className="sc-iBYQkv igfonv"
+        >
+          <li
+            className="sc-ftTHYK hJbqbM"
+          />
+          <li
+            className="sc-ftTHYK hJbqbM"
+          />
+          <li
+            className="sc-ftTHYK hJbqbM"
+          />
+        </ul>
+      </div>
     </div>
+    <div />
   </div>
 </div>
 `;

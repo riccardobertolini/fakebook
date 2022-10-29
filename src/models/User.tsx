@@ -3,7 +3,7 @@ export type APIUserResult = {
 };
 
 export type User = {
-	gender: 'male' | 'female';
+	gender: string;
 	name: {
 		title: string;
 		first: string;
@@ -17,7 +17,7 @@ export type User = {
 		city: string;
 		state: string;
 		country: string;
-		postcode: string;
+		postcode: number;
 		coordinates: {
 			latitude: string;
 			longitude: string;
