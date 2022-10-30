@@ -4,6 +4,9 @@ Simple project made with React 18, useEffect, Context Hook and TypeScript.
 A live demo for a quick preview, is available [👉 clicking here](https://fakebook-ten.vercel.app/).
 
 
+![alt text]([http://url/to/img.png](https://raw.githubusercontent.com/riccardobertolini/fakebook/master/public/github_image.png))
+
+
 ## How to
 
 In the project directory, you can run:
