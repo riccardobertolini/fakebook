@@ -38,7 +38,7 @@ export const ProfilePic = styled.img`
 
 export const ProfileName = styled.div`
 	margin-top: 20px;
-	font-weight: 200;
+	font-weight: 800;
 	font-size: 30px;
 	font-family: 'Lato', sans-serif;
 	position: relative;

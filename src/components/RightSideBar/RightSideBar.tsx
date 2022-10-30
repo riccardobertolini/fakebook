@@ -36,8 +36,8 @@ export const RightSideBar = () => {
 					On this project, I'm using React Hooks like useContext, useState, useEffect to achieve a smoother user experience. <br />
 					The User API returns random generated users, so to handle the profile view, I'm "caching" the first call that happens when the user open the page in a custom UseContext hook. <br />
 					For this reason, if an user lands refreshing on the URL generated for the profile, it will be redirected to the homepage, where a new API call will be submitted. <br />
-					All the design has been manually written using styled components. A natural next step for this project would be wrapping the React app in a Next.js framework, in order to caching the api
-					calls, setting login logic and simpler
+					All the design has been manually written using styled components. A natural next step for this project would be wrapping the React app in a Next.js framework, in order to cache the api
+					calls, setting login logic and server side render.
 				</AccordionText>
 			</SideSection>
 		</RightSideMenu>
