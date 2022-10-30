@@ -8,18 +8,20 @@ export const UserInteractiveTile = () => {
 	const { userPosts, updateUserPosts } = useGlobalContext();
 	const [content, updateContent] = useState<string>('');
 
+	const submitContent = (event: string) => {
+		if (event === 'Enter' || event === 'button') {
+			content.length > 0 && updateUserPosts([xss(content), ...userPosts]);
+			updateContent('');
+		}
+	};
+
 	return (
 		<InteractiveWrapper>
 			<InteractivePicture>
 				<img src="/generic-user.png" alt="" />
 			</InteractivePicture>
-			<InteractiveInput type="text" placeholder={"What's in your Mind, John?"} value={content} onChange={event => updateContent(event.target.value)} />
-			<SubmitButton
-				onClick={() => {
-					content.length > 0 && updateUserPosts([xss(content), ...userPosts]);
-					updateContent('');
-				}}
-			>
+			<InteractiveInput type="text" placeholder={"What's in your Mind, John?"} value={content} onChange={event => updateContent(event.target.value)} onKeyDown={event => submitContent(event.key)} />
+			<SubmitButton onClick={() => submitContent('button')}>
 				<AiOutlineRight />
 			</SubmitButton>
 		</InteractiveWrapper>
