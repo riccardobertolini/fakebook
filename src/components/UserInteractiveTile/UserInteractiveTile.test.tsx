@@ -1,7 +1,6 @@
 import renderer from 'react-test-renderer';
 import { UserInteractiveTile } from './UserInteractiveTile';
 import * as React from 'react';
-import { act } from '@testing-library/react';
 import { MockedUser1 } from '../../mock/mockedUser';
 
 jest.mock('../../globalContext', () => ({
