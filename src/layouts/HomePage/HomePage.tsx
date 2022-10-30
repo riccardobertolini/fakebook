@@ -5,13 +5,15 @@ import { Body, SocialWall, ShowMoreBtn, Footer } from '../../App.styles';
 import { UserTile } from '../../components/UserTile/UserTile';
 import { useGlobalContext } from '../../globalContext';
 import { UserTileLoading } from '../../components/UserTile/UserTileLoading';
+import { UserInteractiveTile } from '../../components/UserInteractiveTile/UserInteractiveTile';
+import { MockedUser2 } from '../../mock/mockedUser';
 
 const HomePage = () => {
 	const [loading, setLoading] = useState<boolean>(false);
 	const [error, setError] = useState<boolean>(false);
 	const [page, setPage] = useState<number>(1);
 	const [userList, updateUserList] = useState<User[]>([]);
-	const { users, updateUsers } = useGlobalContext();
+	const { users, updateUsers, userPosts } = useGlobalContext();
 
 	React.useEffect(() => {
 		const fetchUsers = async () => {
@@ -38,11 +40,15 @@ const HomePage = () => {
 
 	return (
 		<Body>
+			<UserInteractiveTile />
 			<SocialWall>
 				{loading && <UserTileLoading times={5} />}
-				{userList?.map((user, index) => (
-					<UserTile user={user} index={index} />
-				))}
+				{[...userPosts, ...userList]?.map((user, index) => {
+					if (typeof user === 'string') {
+						return <UserTile user={MockedUser2} index={index} hardCodedquote={user} selfContent={true} />;
+					}
+					return <UserTile user={user} index={index} selfContent={false} />;
+				})}
 				<Footer>
 					<ShowMoreBtn onClick={() => setPage(page + 1)}>Show More</ShowMoreBtn>
 				</Footer>

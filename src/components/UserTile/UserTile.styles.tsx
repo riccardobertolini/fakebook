@@ -36,6 +36,7 @@ export const ImageContainer = styled.div`
 	overflow: hidden;
 	height: 400px;
 	width: 100%;
+	border-radius: 10px;
 `;
 
 export const ImagePosted = styled.img`
@@ -86,4 +87,6 @@ export const LikeButton = styled.a`
 
 export const CommentButton = styled(Link)`
 	${InteractionButtonsDesign};
+	background-color: #4267b2;
+	color: white;
 `;

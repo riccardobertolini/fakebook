@@ -5,7 +5,7 @@ exports[`App component should renders 1`] = `
   className="sc-bcXHqe hICBOO"
 >
   <div
-    className="sc-hLBbgP dpBJer"
+    className="sc-hLBbgP cggtmG"
   />
   <div
     className="sc-ipEyDJ gHALup"
@@ -14,7 +14,7 @@ exports[`App component should renders 1`] = `
       className="sc-jSUZER kjWGah"
     >
       <div
-        className="sc-csuSiG fLyrYx"
+        className="sc-eDWCr ckUNIy"
       >
         <ul
           className="sc-iBYQkv igfonv"
@@ -31,6 +31,9 @@ exports[`App component should renders 1`] = `
         </ul>
       </div>
     </div>
+    <div
+      className="sc-csuSiG hveveN"
+    />
     <div />
   </div>
 </div>

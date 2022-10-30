@@ -13,7 +13,7 @@ jest.mock('react-router-dom', () => ({
 
 describe('UserTile component', () => {
 	it('should renders', () => {
-		const wrapper = renderer.create(<UserTile user={MockedUser1} index={0} />).toJSON();
+		const wrapper = renderer.create(<UserTile user={MockedUser1} index={0} selfContent={true} />).toJSON();
 		expect(wrapper).toMatchSnapshot();
 	});
 });

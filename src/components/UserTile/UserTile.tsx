@@ -8,9 +8,11 @@ import { AiOutlineLike, AiFillLike } from 'react-icons/ai';
 type UserProps = {
 	user: User;
 	index: number;
+	selfContent: boolean;
+	hardCodedquote?: string | null;
 };
 
-export function UserTile({ user, index }: UserProps) {
+export function UserTile({ user, index, selfContent, hardCodedquote = null }: UserProps) {
 	const [quote, updateQuote] = useState<QuoteProps>();
 	const [liked, isLiked] = useState<boolean>(false);
 	const [likesNumber, updateLikes] = useState<number>(0);
@@ -38,17 +40,22 @@ export function UserTile({ user, index }: UserProps) {
 				<img src={user.picture.medium} alt="" />
 				{user.name.first} {user.name.last}
 			</UserInfo>
-			<Quote>{(quote && quote[index]?.text) || ''}</Quote>
-			<ImageContainer>
-				<ImagePosted src={`https://picsum.photos/400/450?random=${index}`} />
-			</ImageContainer>
-			<SocialInteractions>
-				<LikeButton onClick={() => userLikedPost()}>
-					{liked ? <AiFillLike /> : <AiOutlineLike />}
-					{likesNumber} Like(s)
-				</LikeButton>
-				<CommentButton to={`/${user.login.uuid}`}>Open Profile</CommentButton>
-			</SocialInteractions>
+			{selfContent ? <Quote>{hardCodedquote}</Quote> : <Quote>{(quote && quote[index]?.text) || ''}</Quote>}
+
+			{!selfContent && (
+				<ImageContainer>
+					<ImagePosted src={`https://picsum.photos/400/450?random=${user.dob.age}`} />
+				</ImageContainer>
+			)}
+			{!selfContent && (
+				<SocialInteractions>
+					<LikeButton onClick={() => userLikedPost()}>
+						{liked ? <AiFillLike /> : <AiOutlineLike />}
+						{likesNumber} Like(s)
+					</LikeButton>
+					<CommentButton to={`/${user.login.uuid}`}>Open Profile</CommentButton>
+				</SocialInteractions>
+			)}
 		</SocialWallTile>
 	);
 }

@@ -19,9 +19,12 @@ export const SideSection = styled.div`
 	background-color: #fff;
 	border: 1px solid #ccc;
 	font-family: 'Lato', sans-serif;
-	font-weight: 200;
+	font-weight: 400;
+	font-size: 13px;
+	line-height: 1.6;
 	padding: 10px;
 	border-radius: 10px;
+	margin-bottom: 20px;
 
 	h3 {
 		border-bottom: 1px solid #ccc;
@@ -31,4 +34,17 @@ export const SideSection = styled.div`
 	p {
 		font-size: 14px;
 	}
+
+	span {
+		margin-left: 10px;
+		font-size: 10px;
+	}
+`;
+
+export const Accordion = styled.div`
+	cursor: pointer;
+`;
+
+export const AccordionText = styled.div<{ accordionOpen: boolean }>`
+	display: ${props => (props.accordionOpen ? 'block' : 'none')};
 `;

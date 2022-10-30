@@ -1,7 +1,9 @@
 import { Link, useParams, Navigate } from 'react-router-dom';
 import { useGlobalContext } from '../../globalContext';
-import { ProfilePic, ProfileWrapper, ProfileNavBar, ProfileHeader, ProfileName, ProfileDetails, ProfileAddress } from './Profile.styles';
+import { ProfilePic, ProfileWrapper, ProfileNavBar, ProfileHeader, ProfileName, ProfileDetails, ProfileAddress, BackgroundImage, ClosingButton } from './Profile.styles';
 import { AiOutlineHome, AiOutlineMail, AiOutlinePhone } from 'react-icons/ai';
+import { AiOutlineGift, AiOutlineClose } from 'react-icons/ai';
+import { format } from 'date-fns';
 
 const Profile = () => {
 	const { userSlug } = useParams();
@@ -10,10 +12,16 @@ const Profile = () => {
 
 	if (!user) return <Navigate to="/" />;
 
+	const randomNumber = Math.floor(Math.random() * 100);
+
 	return (
 		<>
 			<ProfileWrapper>
 				<ProfileHeader>
+					<ClosingButton to={'/'}>
+						<AiOutlineClose />
+					</ClosingButton>
+					<BackgroundImage src={`https://picsum.photos/500/250?random=${randomNumber}&blur=2`} />
 					<ProfilePic src={user.picture.large} alt="" />
 					<ProfileName>
 						{user.name.title} {user.name.first} {user.name.last}
@@ -29,6 +37,9 @@ const Profile = () => {
 					</ProfileDetails>
 					<ProfileDetails>
 						<AiOutlinePhone /> {user.phone}
+					</ProfileDetails>
+					<ProfileDetails>
+						<AiOutlineGift /> {format(new Date(user.dob.date), 'dd/MM/yyyy')}
 					</ProfileDetails>
 				</ProfileHeader>
 				<br />

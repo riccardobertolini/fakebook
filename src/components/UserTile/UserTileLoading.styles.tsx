@@ -56,6 +56,7 @@ export const EmptyProfileImage = styled.div`
 	background-color: dimgrey;
 	object-fit: contain;
 `;
+
 export const QuoteLoading = styled.div`
 	font-weight: 400;
 	font-size: 18px;
