@@ -16,8 +16,10 @@ exports[`HomePage component should renders 1`] = `
       />
     </div>
     <input
+      alt="input_interaction"
       className="sc-iveFHk kwvCaR"
       onChange={[Function]}
+      onKeyDown={[Function]}
       placeholder="What's in your Mind, John?"
       type="text"
       value=""
@@ -53,7 +55,7 @@ exports[`HomePage component should renders 1`] = `
       className="sc-kDvujY fwoiUJ"
     >
       <button
-        className="sc-jrcTuL drZSHS"
+        className="sc-jrcTuL gesAky"
         onClick={[Function]}
       >
         Show More

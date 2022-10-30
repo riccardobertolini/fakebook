@@ -13,6 +13,7 @@ exports[`UserInteractiveTile should render 1`] = `
     />
   </div>
   <input
+    alt="input_interaction"
     className="sc-gswNZR ghKigz"
     onChange={[Function]}
     onKeyDown={[Function]}

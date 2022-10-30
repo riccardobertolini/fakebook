@@ -30,7 +30,7 @@ exports[`RightSideBar component should renders 1`] = `
         />
       </svg>
        
-      Tomorrow is Isabelle's Birthday
+      Today is Isabelle's Birthday
     </div>
     <div>
       <svg
@@ -52,7 +52,7 @@ exports[`RightSideBar component should renders 1`] = `
         />
       </svg>
        
-      Tomorrow is Isabelle's Birthday
+      Today is Isabelle's Birthday
     </div>
     <div>
       <svg
@@ -74,33 +74,51 @@ exports[`RightSideBar component should renders 1`] = `
         />
       </svg>
        
-      Tomorrow is Isabelle's Birthday
+      Today is Isabelle's Birthday
     </div>
   </div>
   <div
     className="sc-gswNZR erVnGO"
   >
-    How does it work? 
-    <span>
-      <svg
-        fill="currentColor"
-        height="1em"
-        stroke="currentColor"
-        strokeWidth="0"
-        style={
-          Object {
-            "color": undefined,
-          }
-        }
-        viewBox="0 0 1024 1024"
-        width="1em"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
-        />
-      </svg>
-    </span>
+    <div
+      className="sc-dkrFOg blqzXU"
+      onClick={[Function]}
+    >
+      <h3>
+        How does it work? 
+        <span>
+          <svg
+            fill="currentColor"
+            height="1em"
+            stroke="currentColor"
+            strokeWidth="0"
+            style={
+              Object {
+                "color": undefined,
+              }
+            }
+            viewBox="0 0 1024 1024"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+            />
+          </svg>
+        </span>
+      </h3>
+    </div>
+    <div
+      className="sc-hLBbgP gFZEkO"
+    >
+      On this project, I'm using React Hooks like useContext, useState, useEffect to achieve a smoother user experience. 
+      <br />
+      The User API returns random generated users, so to handle the profile view, I'm "caching" the first call that happens when the user open the page in a custom UseContext hook. 
+      <br />
+      For this reason, if an user lands refreshing on the URL generated for the profile, it will be redirected to the homepage, where a new API call will be submitted. 
+      <br />
+      All the design has been manually written using styled components. A natural next step for this project would be wrapping the React app in a Next.js framework, in order to cache the api calls, setting login logic and server side render.
+    </div>
   </div>
 </div>
 `;

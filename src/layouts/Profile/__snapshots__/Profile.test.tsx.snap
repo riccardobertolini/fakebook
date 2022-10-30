@@ -8,8 +8,8 @@ exports[`Profile component should render the user profile component 1`] = `
     className="sc-eDvSVe kxGUSM"
   >
     <div
-      className="sc-iBYQkv eRRbxk"
-      src="https://picsum.photos/500/250?random=3&blur=2"
+      className="sc-iBYQkv jIiAgQ"
+      src="https://picsum.photos/500/250?random=7&blur=2"
     />
     <img
       alt=""
@@ -17,7 +17,7 @@ exports[`Profile component should render the user profile component 1`] = `
       src="https://randomuser.me/api/portraits/women/44.jpg"
     />
     <div
-      className="sc-hLBbgP hZYCBf"
+      className="sc-hLBbgP bNyEtp"
     >
       Ms
        
@@ -133,7 +133,7 @@ exports[`Profile component should render the user profile component 1`] = `
   </div>
   <br />
   <div
-    className="sc-bcXHqe ccRnkD"
+    className="sc-bcXHqe fBFcAT"
   />
 </div>
 `;

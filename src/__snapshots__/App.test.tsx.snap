@@ -17,22 +17,25 @@ exports[`App component should renders 1`] = `
         className="sc-eDWCr ckUNIy"
       >
         <ul
-          className="sc-iBYQkv igfonv"
+          className="sc-iBYQkv cEbell"
         >
+          <h3>
+            Contacts
+          </h3>
           <li
-            className="sc-ftTHYK hJbqbM"
+            className="sc-ftTHYK fxibMA"
           />
           <li
-            className="sc-ftTHYK hJbqbM"
+            className="sc-ftTHYK fxibMA"
           />
           <li
-            className="sc-ftTHYK hJbqbM"
+            className="sc-ftTHYK fxibMA"
           />
         </ul>
       </div>
     </div>
     <div
-      className="sc-csuSiG hveveN"
+      className="sc-csuSiG dTLbut"
     />
     <div />
   </div>
