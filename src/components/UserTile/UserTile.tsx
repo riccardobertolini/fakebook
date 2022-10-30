@@ -4,6 +4,7 @@ import { QuoteProps } from '../../models/Quotes';
 import { SocialWallTile, UserInfo, ImagePosted, Quote, ImageContainer, SocialInteractions, LikeButton, CommentButton } from './UserTile.styles';
 import { getQuotes } from '../../api/getQuote';
 import { AiOutlineLike, AiFillLike } from 'react-icons/ai';
+import { useGlobalContext } from '../../globalContext';
 
 type UserProps = {
 	user: User;
@@ -16,15 +17,20 @@ export function UserTile({ user, index, selfContent, hardCodedquote = null }: Us
 	const [quote, updateQuote] = useState<QuoteProps>();
 	const [liked, isLiked] = useState<boolean>(false);
 	const [likesNumber, updateLikes] = useState<number>(0);
+	const { quotesData, updateQuotesData } = useGlobalContext();
 
 	useEffect(() => {
 		const fetchQuote = async () => {
 			await getQuotes().then(result => {
 				updateQuote(result);
+				updateQuotesData(result);
 			});
 		};
-
-		fetchQuote();
+		if (quotesData.length > 0) {
+			updateQuote(quotesData);
+		} else {
+			fetchQuote();
+		}
 
 		updateLikes(Math.floor(Math.random() * 100));
 	}, []);

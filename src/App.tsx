@@ -7,14 +7,16 @@ import { User } from './models/User';
 import { SideChatUsers, Logo, NavBar, Root, SideChat, UserStatus, UserThumbnail, InnerThumbnail, BodyComponent, CentralContent } from './App.styles';
 import { SocialWallTile } from './components/UserTile/UserTile.styles';
 import { RightSideBar } from './components/RightSideBar/RightSideBar';
+import { Quote } from './models/Quotes';
 
 function App() {
 	const [users, updateUsers] = useState<User[]>([]);
+	const [quotesData, updateQuotesData] = useState<Quote[]>([]);
 	const [userPosts, updateUserPosts] = useState<string[]>([]);
 
 	return (
 		<Root>
-			<GlobalContext.Provider value={{ users, updateUsers, userPosts, updateUserPosts }}>
+			<GlobalContext.Provider value={{ users, updateUsers, userPosts, updateUserPosts, quotesData, updateQuotesData }}>
 				<NavBar>
 					<Logo to={'/'}>
 						<span>FAKE</span>BOOK
