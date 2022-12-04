@@ -8,8 +8,8 @@ exports[`Profile component should render the user profile component 1`] = `
     className="sc-eDvSVe kxGUSM"
   >
     <div
-      className="sc-iBYQkv jIiAgQ"
-      src="https://picsum.photos/500/250?random=7&blur=2"
+      className="sc-iBYQkv DdfiM"
+      src="https://picsum.photos/500/250?random=56&blur=2"
     />
     <img
       alt=""
